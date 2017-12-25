@@ -1,0 +1,1 @@
+module.exports = ['carousel','intro','iconfont']

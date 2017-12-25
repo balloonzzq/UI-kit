@@ -1,0 +1,32 @@
+// https://github.com/seven-phases-max/less.curious/blob/master/src/for.less
+// ............................................................
+// .for
+
+// @list: banana, apple, pear, potato, carrot, peach;
+
+// #basic-usage {
+//     .for(@list); .-each(@value) {
+//         value: @value;
+//     }
+// }
+// basic-usage {
+//   value: banana;
+//   value: apple;
+//   value: pear;
+//   value: potato;
+//   value: carrot;
+//   value: peach;
+// }
+
+.for(@i, @n) {.-each(@i)}
+.for(@n)     when (isnumber(@n)) {.for(1, @n)}
+.for(@i, @n) when not (@i = @n)  {
+    .for((@i + (@n - @i) / abs(@n - @i)), @n);
+}
+
+// ............................................................
+// .for-each
+
+.for(@array)   when (default()) {.for-impl_(length(@array))}
+.for-impl_(@i) when (@i > 1)    {.for-impl_((@i - 1))}
+.for-impl_(@i) when (@i > 0)    {.-each(extract(@array, @i))}
