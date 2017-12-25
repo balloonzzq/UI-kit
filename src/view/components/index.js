@@ -1,11 +1,10 @@
-import MyHeader from './my-header'
-import MyContent from './my-content'
-import MyFooter from './my-footer'
+
+import carousel from './carousel'
+import icon from './icon'
 
 const install = (Vue) => {
-  Vue.component('my-header', MyHeader)
-  Vue.component('my-content', MyContent)
-  Vue.component('my-footer', MyFooter)
+  Vue.component('zan-carousel', carousel)
+  Vue.component('zan-icon', icon)
 }
 
 export default install

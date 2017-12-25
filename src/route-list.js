@@ -1,1 +1,1 @@
-module.exports = ['carousel','intro','iconfont']
+module.exports = ['iconfont','carousel','intro']
